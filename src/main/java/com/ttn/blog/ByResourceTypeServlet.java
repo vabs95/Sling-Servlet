@@ -63,16 +63,34 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
 
         w.write("\n");
 
-        Collections.sort(childrenList, new Comparator<Resource>() {
-            @Override
-            public int compare(Resource o1, Resource o2) {
-                ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
-                ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
-                String st1 = proValueMap1.get("jcr:created", "default");
-                String st2 = proValueMap2.get("jcr:created", "default");
-                return st1.compareTo(st2);
-            }
-        });
+        String orderBY = request.getParameter("orderBy");
+
+
+        if (orderBY.equals("assc")) {
+            Collections.sort(childrenList, new Comparator<Resource>() {
+                @Override
+                public int compare(Resource o1, Resource o2) {
+                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
+                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
+                    String st1 = proValueMap1.get("jcr:created", "default");
+                    String st2 = proValueMap2.get("jcr:created", "default");
+                    return st1.compareTo(st2);
+                }
+            });
+        } else if (orderBY.equals("desc")) {
+            Collections.sort(childrenList, new Comparator<Resource>() {
+                @Override
+                public int compare(Resource o1, Resource o2) {
+                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
+                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
+                    String st1 = proValueMap1.get("jcr:created", "default");
+                    String st2 = proValueMap2.get("jcr:created", "default");
+                    return st2.compareTo(st1);
+                }
+            });
+        } else {
+            w.write("Wrong parameter");
+        }
 
         for (Resource resource1 : childrenList) {
             w.write(resource1.getName() + "\t");
