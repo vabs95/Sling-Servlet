@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0" name="com.ttn.blog.ByPathServlet">
+    <implementation class="com.ttn.blog.ByPathServlet"/>
+    <service servicefactory="false">
+        <provide interface="javax.servlet.Servlet"/>
+    </service>
+    <property name="sling.servlet.paths">
+        /hello-world-servlet
+    </property>
+    <property name="service.description" value="Hello World Path Servlet"/>
+    <property name="service.vendor" value="The Apache Software Foundation"/>
+</scr:component>
