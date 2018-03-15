@@ -18,6 +18,10 @@
  */
 package com.ttn.blog;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
@@ -29,10 +33,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.*;
 
+import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_EXTENSIONS;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_RESOURCE_TYPES;
 
 
@@ -40,64 +47,69 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVL
 @SuppressWarnings("serial")
 public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
 
+
     private final Logger log = LoggerFactory.getLogger(ByResourceTypeServlet.class);
 
     @Override
-    protected void doGet(SlingHttpServletRequest request,
-                         SlingHttpServletResponse response) throws ServletException,
-            IOException {
-        Resource resource = request.getResource();
+    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
 
+        Resource resource = request.getResource();
         Iterator<Resource> children = resource.listChildren();
-        Writer w = response.getWriter();
 
         List<Resource> childrenList = new ArrayList();
-        while (children.hasNext()) {
-            childrenList.add(children.next());
-        }
 
-        w.write("\n");
-        for (Resource resource1 : childrenList) {
-            w.write(resource1.getName() + "\t");
-        }
+        Document document = new Document();
 
-        w.write("\n");
-
-        String orderBY = request.getParameter("orderBy");
+        ServletOutputStream baos = response.getOutputStream();
+        response.setContentType("application/pdf");
 
 
-        if (orderBY.equals("assc")) {
-            Collections.sort(childrenList, new Comparator<Resource>() {
-                @Override
-                public int compare(Resource o1, Resource o2) {
-                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
-                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
-                    String st1 = proValueMap1.get("jcr:created", "default");
-                    String st2 = proValueMap2.get("jcr:created", "default");
-                    return st1.compareTo(st2);
+        try {
+
+            PdfWriter.getInstance(document, baos);
+            document.open();
+            document.add(new Paragraph("Hello"));
+
+            while (children.hasNext()) {
+                childrenList.add(children.next());
+            }
+
+
+            for (Resource resource1 : childrenList) {
+                document.add(new Paragraph(resource1.getName() + "\t"));
+            }
+
+
+                final String orderBy = request.getParameter("orderBy");
+                Collections.sort(childrenList, new Comparator<Resource>() {
+                    @Override
+                    public int compare(Resource o1, Resource o2) {
+                        ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
+                        ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
+                        String st1 = proValueMap1.get("jcr:created", "default");
+                        String st2 = proValueMap2.get("jcr:created", "default");
+                        if (orderBy.equals("assc"))
+                            return st1.compareTo(st2);
+                        else if (orderBy.equals("desc"))
+                            return st2.compareTo(st1);
+                        else
+                            return st1.compareTo(st2);
+                    }
+                });
+
+            document.add(new Paragraph("\n"));
+
+                for (Resource resource1 : childrenList) {
+                    document.add(new Paragraph(resource1.getName() + "\t"));
                 }
-            });
-        } else if (orderBY.equals("desc")) {
-            Collections.sort(childrenList, new Comparator<Resource>() {
-                @Override
-                public int compare(Resource o1, Resource o2) {
-                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
-                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
-                    String st1 = proValueMap1.get("jcr:created", "default");
-                    String st2 = proValueMap2.get("jcr:created", "default");
-                    return st2.compareTo(st1);
-                }
-            });
-        } else {
-            w.write("Wrong parameter");
-        }
 
-        for (Resource resource1 : childrenList) {
-            w.write(resource1.getName() + "\t");
-        }
+                document.close();
+            } catch(DocumentException e){
+                e.printStackTrace();
+            }
 
+
+        }
 
     }
-
-}
 
