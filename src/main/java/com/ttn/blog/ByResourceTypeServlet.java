@@ -73,7 +73,7 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
 
             document.add(new Paragraph("Unordered List"));
             for (Resource resource1 : childrenList) {
-                document.add(new Paragraph(resource1.getName() + "\t"));
+                document.add(new Paragraph(resource1.getName() + "             " + resource1.getValueMap().get("jcr:created", "default")));
             }
 
 
@@ -81,8 +81,8 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
             Collections.sort(childrenList, new Comparator<Resource>() {
                 @Override
                 public int compare(Resource o1, Resource o2) {
-                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
-                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
+                    ValueMap proValueMap1 = o1.getValueMap();
+                    ValueMap proValueMap2 = o2.getValueMap();
                     String st1 = proValueMap1.get("jcr:created", "default");
                     String st2 = proValueMap2.get("jcr:created", "default");
                     if (orderBy.equals("assc"))
@@ -98,7 +98,7 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
 
             document.add(new Paragraph("Ordered by " + orderBy));
             for (Resource resource1 : childrenList) {
-                document.add(new Paragraph(resource1.getName() + "\t"));
+                document.add(new Paragraph(resource1.getName() + "            " + resource1.getValueMap().get("jcr:created", "default")));
             }
 
             document.close();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ttn.blog.ByPathServletTest" time="0.031" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ttn.blog.ByPathServletTest" time="0.028" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="IN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/java/jdk1.8.0_161/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/home/vaibhav/projects/blog-app/target/surefire/surefirebooter1210803256303517088.jar /home/vaibhav/projects/blog-app/target/surefire 2018-03-15T14-05-47_913-jvmRun1 surefire591947132174428300tmp surefire_05846327575723240766tmp"/>
+    <property name="sun.java.command" value="/home/vaibhav/projects/blog-app/target/surefire/surefirebooter1437475500851015823.jar /home/vaibhav/projects/blog-app/target/surefire 2018-03-15T15-59-18_150-jvmRun1 surefire5726499351027642172tmp surefire_07573945886709301099tmp"/>
     <property name="surefire.test.class.path" value="/home/vaibhav/projects/blog-app/target/test-classes:/home/vaibhav/projects/blog-app/target/classes:/home/vaibhav/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/home/vaibhav/.m2/repository/org/apache/ant/ant/1.8.2/ant-1.8.2.jar:/home/vaibhav/.m2/repository/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar:/home/vaibhav/.m2/repository/javax/servlet/servlet-api/3.0-alpha-1/servlet-api-3.0-alpha-1.jar:/home/vaibhav/.m2/repository/org/osgi/org.osgi.compendium/5.0.0/org.osgi.compendium-5.0.0.jar:/home/vaibhav/.m2/repository/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar:/home/vaibhav/.m2/repository/javax/jcr/jcr/2.0/jcr-2.0.jar:/home/vaibhav/.m2/repository/org/apache/sling/org.apache.sling.api/2.16.2/org.apache.sling.api-2.16.2.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcprov-jdk16/1.44/bcprov-jdk16-1.44.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bctsp-jdk16/1.46/bctsp-jdk16-1.46.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar:/home/vaibhav/.m2/repository/org/slf4j/slf4j-api/1.7.6/slf4j-api-1.7.6.jar:/home/vaibhav/.m2/repository/com/itextpdf/itextpdf/5.0.6/itextpdf-5.0.6.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar:/home/vaibhav/.m2/repository/org/apache/felix/org.apache.felix.scr.annotations/1.12.0/org.apache.felix.scr.annotations-1.12.0.jar:/home/vaibhav/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/vaibhav/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/vaibhav"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/vaibhav/projects/blog-app/target/surefire/surefirebooter1210803256303517088.jar"/>
+    <property name="surefire.real.class.path" value="/home/vaibhav/projects/blog-app/target/surefire/surefirebooter1437475500851015823.jar"/>
     <property name="sun.boot.class.path" value="/usr/java/jdk1.8.0_161/jre/lib/resources.jar:/usr/java/jdk1.8.0_161/jre/lib/rt.jar:/usr/java/jdk1.8.0_161/jre/lib/sunrsasign.jar:/usr/java/jdk1.8.0_161/jre/lib/jsse.jar:/usr/java/jdk1.8.0_161/jre/lib/jce.jar:/usr/java/jdk1.8.0_161/jre/lib/charsets.jar:/usr/java/jdk1.8.0_161/jre/lib/jfr.jar:/usr/java/jdk1.8.0_161/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_161-b12"/>
