@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1521102697923
+Bnd-LastModified: 1521102950185
 Build-Jdk: 1.8.0_161
 Built-By: vaibhav
 Bundle-Description: com.ttn.blog - blog-app

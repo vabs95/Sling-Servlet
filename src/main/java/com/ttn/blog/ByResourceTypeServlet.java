@@ -34,12 +34,9 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.*;
 
-import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_EXTENSIONS;
 import static org.apache.sling.api.servlets.ServletResolverConstants.SLING_SERVLET_RESOURCE_TYPES;
 
 
@@ -68,48 +65,49 @@ public class ByResourceTypeServlet extends SlingSafeMethodsServlet {
 
             PdfWriter.getInstance(document, baos);
             document.open();
-            document.add(new Paragraph("Hello"));
+
 
             while (children.hasNext()) {
                 childrenList.add(children.next());
             }
 
-
+            document.add(new Paragraph("Unordered List"));
             for (Resource resource1 : childrenList) {
                 document.add(new Paragraph(resource1.getName() + "\t"));
             }
 
 
-                final String orderBy = request.getParameter("orderBy");
-                Collections.sort(childrenList, new Comparator<Resource>() {
-                    @Override
-                    public int compare(Resource o1, Resource o2) {
-                        ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
-                        ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
-                        String st1 = proValueMap1.get("jcr:created", "default");
-                        String st2 = proValueMap2.get("jcr:created", "default");
-                        if (orderBy.equals("assc"))
-                            return st1.compareTo(st2);
-                        else if (orderBy.equals("desc"))
-                            return st2.compareTo(st1);
-                        else
-                            return st1.compareTo(st2);
-                    }
-                });
+            final String orderBy = request.getParameter("orderBy");
+            Collections.sort(childrenList, new Comparator<Resource>() {
+                @Override
+                public int compare(Resource o1, Resource o2) {
+                    ValueMap proValueMap1 = o1.adaptTo(ValueMap.class);
+                    ValueMap proValueMap2 = o2.adaptTo(ValueMap.class);
+                    String st1 = proValueMap1.get("jcr:created", "default");
+                    String st2 = proValueMap2.get("jcr:created", "default");
+                    if (orderBy.equals("assc"))
+                        return st1.compareTo(st2);
+                    else if (orderBy.equals("desc"))
+                        return st2.compareTo(st1);
+                    else
+                        return st1.compareTo(st2);
+                }
+            });
 
             document.add(new Paragraph("\n"));
 
-                for (Resource resource1 : childrenList) {
-                    document.add(new Paragraph(resource1.getName() + "\t"));
-                }
-
-                document.close();
-            } catch(DocumentException e){
-                e.printStackTrace();
+            document.add(new Paragraph("Ordered by " + orderBy));
+            for (Resource resource1 : childrenList) {
+                document.add(new Paragraph(resource1.getName() + "\t"));
             }
 
-
+            document.close();
+        } catch (DocumentException e) {
+            e.printStackTrace();
         }
 
+
     }
+
+}
 

@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6c9358-f1fe-4419-a2ab-94faa60709de" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itextpdf_5_0_6.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcmail_jdk14_1_38.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcmail_jdk16_1_46.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk14_1_38.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk16_1_44.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bctsp_jdk14_1_38.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bctsp_jdk16_1_46.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/blog-app.iml" afterPath="$PROJECT_DIR$/blog-app.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ttn/blog/ByResourceTypeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/ttn/blog/ByResourceTypeServlet.java" />
-      <change beforePath="$PROJECT_DIR$/target/blog-app-1.0.jar" afterPath="$PROJECT_DIR$/target/blog-app-1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ttn/blog/ByResourceTypeServlet$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ttn/blog/ByResourceTypeServlet$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ttn/blog/ByResourceTypeServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/ttn/blog/ByResourceTypeServlet.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ttn.blog.ByPathServletTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ttn.blog.ByPathServletTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ttn.blog.ByPathServletTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.ttn.blog.ByPathServletTest.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,13 +17,13 @@
       <file leaf-file-name="ByResourceTypeServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ttn/blog/ByResourceTypeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="98" column="61" lean-forward="false" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1873#1900#0" expanded="true" />
-                <element signature="e#3054#3836#0" expanded="true" />
-                <element signature="e#3835#3836#0" expanded="true" />
+                <element signature="e#1717#1744#0" expanded="true" />
+                <element signature="e#2899#3625#0" expanded="true" />
+                <element signature="e#3624#3625#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -308,12 +290,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521019424345</updated>
       <workItem from="1521019428419" duration="7765000" />
-      <workItem from="1521044020363" duration="14608000" />
+      <workItem from="1521044020363" duration="14836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22373000" />
+    <option name="totallyTimeSpent" value="22601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
@@ -444,13 +426,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ttn/blog/ByResourceTypeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="98" column="61" lean-forward="false" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1873#1900#0" expanded="true" />
-            <element signature="e#3054#3836#0" expanded="true" />
-            <element signature="e#3835#3836#0" expanded="true" />
+            <element signature="e#1717#1744#0" expanded="true" />
+            <element signature="e#2899#3625#0" expanded="true" />
+            <element signature="e#3624#3625#0" expanded="true" />
           </folding>
         </state>
       </provider>
